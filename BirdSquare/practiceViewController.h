@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface practiceViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *txtUsername;
+@property (weak, nonatomic) IBOutlet UITextField *txtPassword;
+- (IBAction)btnSignIn:(id)sender;
 
 @end

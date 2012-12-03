@@ -18,6 +18,9 @@
 		AFB28AE7166C7423000AAC91 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB28AE6166C7423000AAC91 /* Default-568h@2x.png */; };
 		AFB28AEA166C7423000AAC91 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB28AE8166C7423000AAC91 /* MainStoryboard.storyboard */; };
 		AFB28AED166C7423000AAC91 /* practiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB28AEC166C7423000AAC91 /* practiceViewController.m */; };
+		AFB28AF5166C8342000AAC91 /* practiceHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB28AF4166C8342000AAC91 /* practiceHomePageController.m */; };
+		AFB28AFC166C86C9000AAC91 /* practiceLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB28AFB166C86C9000AAC91 /* practiceLocationController.m */; };
+		AFB28B03166C8E5A000AAC91 /* practiceCheckInFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB28B02166C8E5A000AAC91 /* practiceCheckInFormController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,12 @@
 		AFB28AE9166C7423000AAC91 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AFB28AEB166C7423000AAC91 /* practiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = practiceViewController.h; sourceTree = "<group>"; };
 		AFB28AEC166C7423000AAC91 /* practiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = practiceViewController.m; sourceTree = "<group>"; };
+		AFB28AF3166C8342000AAC91 /* practiceHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = practiceHomePageController.h; path = ../practiceHomePageController.h; sourceTree = "<group>"; };
+		AFB28AF4166C8342000AAC91 /* practiceHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = practiceHomePageController.m; path = ../practiceHomePageController.m; sourceTree = "<group>"; };
+		AFB28AFA166C86C9000AAC91 /* practiceLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = practiceLocationController.h; path = ../practiceLocationController.h; sourceTree = "<group>"; };
+		AFB28AFB166C86C9000AAC91 /* practiceLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = practiceLocationController.m; path = ../practiceLocationController.m; sourceTree = "<group>"; };
+		AFB28B01166C8E5A000AAC91 /* practiceCheckInFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = practiceCheckInFormController.h; path = ../practiceCheckInFormController.h; sourceTree = "<group>"; };
+		AFB28B02166C8E5A000AAC91 /* practiceCheckInFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = practiceCheckInFormController.m; path = ../practiceCheckInFormController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +97,12 @@
 				AFB28AE8166C7423000AAC91 /* MainStoryboard.storyboard */,
 				AFB28AEB166C7423000AAC91 /* practiceViewController.h */,
 				AFB28AEC166C7423000AAC91 /* practiceViewController.m */,
+				AFB28AF3166C8342000AAC91 /* practiceHomePageController.h */,
+				AFB28AF4166C8342000AAC91 /* practiceHomePageController.m */,
+				AFB28AFA166C86C9000AAC91 /* practiceLocationController.h */,
+				AFB28AFB166C86C9000AAC91 /* practiceLocationController.m */,
+				AFB28B01166C8E5A000AAC91 /* practiceCheckInFormController.h */,
+				AFB28B02166C8E5A000AAC91 /* practiceCheckInFormController.m */,
 				AFB28AD7166C7422000AAC91 /* Supporting Files */,
 			);
 			path = BirdSquare;
@@ -177,6 +192,9 @@
 				AFB28ADD166C7423000AAC91 /* main.m in Sources */,
 				AFB28AE1166C7423000AAC91 /* practiceAppDelegate.m in Sources */,
 				AFB28AED166C7423000AAC91 /* practiceViewController.m in Sources */,
+				AFB28AF5166C8342000AAC91 /* practiceHomePageController.m in Sources */,
+				AFB28AFC166C86C9000AAC91 /* practiceLocationController.m in Sources */,
+				AFB28B03166C8E5A000AAC91 /* practiceCheckInFormController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
