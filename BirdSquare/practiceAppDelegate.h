@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface practiceAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSMutableString *uname;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property(strong, nonatomic)NSMutableString *uname;
 
 @end

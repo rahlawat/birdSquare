@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface practiceHomePageController : UIViewController
+{
+    NSString *user;
+}
+@property (weak, nonatomic) IBOutlet UILabel *lblWelcome;
+@property (weak, nonatomic) IBOutlet UIImageView *imgUser;
+
+@property (weak, nonatomic) IBOutlet UITableView *tblBirdsCheckedIn;
+@property (nonatomic, retain) NSString *user;
+
+-(void)setUserName: (NSString*)userName;
 
 @end

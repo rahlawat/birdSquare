@@ -7,12 +7,15 @@
 //
 
 #import "practiceHomePageController.h"
+#import "practiceViewController.h"
+#import "practiceAppDelegate.h"
 
 @interface practiceHomePageController ()
 
 @end
 
 @implementation practiceHomePageController
+@synthesize user;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+//     NSString *welcomeNote = @"Hi";
+//     practiceAppDelegate *appDelegate = (practiceAppDelegate *)[[UIApplication sharedApplication] delegate];
+//    self.lblWelcome.text = [welcomeNote stringByAppendingString:appDelegate.uname];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +40,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)setUserName: (NSString*)userName
+{
+    NSString *welcomeNote = @"Hi";
+    self.lblWelcome.text = [welcomeNote stringByAppendingString:userName];
+
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.lblWelcome setText:self.user];
+}
+
 
 @end

@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface practiceViewController : UIViewController
+@interface practiceViewController : UIViewController <UITextFieldDelegate>
+{
+    NSString * user;
+}
 @property (weak, nonatomic) IBOutlet UITextField *txtUsername;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
+@property(nonatomic, retain)NSString *user;
+
 - (IBAction)btnSignIn:(id)sender;
 
 @end
