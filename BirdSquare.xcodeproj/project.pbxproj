@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF837CA4167F1361002B5374 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF837CA3167F1361002B5374 /* background.jpg */; };
+		AF837D16167F7381002B5374 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF837D15167F7381002B5374 /* libsqlite3.dylib */; };
+		AF837D19167F7AA6002B5374 /* practiceCreateAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF837D18167F7AA6002B5374 /* practiceCreateAccountController.m */; };
 		AFB28AD1166C7422000AAC91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB28AD0166C7422000AAC91 /* UIKit.framework */; };
 		AFB28AD3166C7422000AAC91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB28AD2166C7422000AAC91 /* Foundation.framework */; };
 		AFB28AD5166C7422000AAC91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB28AD4166C7422000AAC91 /* CoreGraphics.framework */; };
@@ -24,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF837CA3167F1361002B5374 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../Pictures/background.jpg; sourceTree = "<group>"; };
+		AF837D15167F7381002B5374 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		AF837D17167F7AA6002B5374 /* practiceCreateAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = practiceCreateAccountController.h; sourceTree = "<group>"; };
+		AF837D18167F7AA6002B5374 /* practiceCreateAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = practiceCreateAccountController.m; sourceTree = "<group>"; };
 		AFB28ACC166C7422000AAC91 /* BirdSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirdSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB28AD0166C7422000AAC91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFB28AD2166C7422000AAC91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF837D16167F7381002B5374 /* libsqlite3.dylib in Frameworks */,
 				AFB28AD1166C7422000AAC91 /* UIKit.framework in Frameworks */,
 				AFB28AD3166C7422000AAC91 /* Foundation.framework in Frameworks */,
 				AFB28AD5166C7422000AAC91 /* CoreGraphics.framework in Frameworks */,
@@ -65,6 +73,7 @@
 		AFB28AC1166C7422000AAC91 = {
 			isa = PBXGroup;
 			children = (
+				AF837D15167F7381002B5374 /* libsqlite3.dylib */,
 				AFB28AD6166C7422000AAC91 /* BirdSquare */,
 				AFB28ACF166C7422000AAC91 /* Frameworks */,
 				AFB28ACD166C7422000AAC91 /* Products */,
@@ -99,7 +108,10 @@
 				AFB28AEC166C7423000AAC91 /* practiceViewController.m */,
 				AFB28AF3166C8342000AAC91 /* practiceHomePageController.h */,
 				AFB28AF4166C8342000AAC91 /* practiceHomePageController.m */,
+				AF837D17167F7AA6002B5374 /* practiceCreateAccountController.h */,
+				AF837D18167F7AA6002B5374 /* practiceCreateAccountController.m */,
 				AFB28AFA166C86C9000AAC91 /* practiceLocationController.h */,
+				AF837CA3167F1361002B5374 /* background.jpg */,
 				AFB28AFB166C86C9000AAC91 /* practiceLocationController.m */,
 				AFB28B01166C8E5A000AAC91 /* practiceCheckInFormController.h */,
 				AFB28B02166C8E5A000AAC91 /* practiceCheckInFormController.m */,
@@ -158,6 +170,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = AFB28AC1166C7422000AAC91;
 			productRefGroup = AFB28ACD166C7422000AAC91 /* Products */;
@@ -179,6 +192,7 @@
 				AFB28AE5166C7423000AAC91 /* Default@2x.png in Resources */,
 				AFB28AE7166C7423000AAC91 /* Default-568h@2x.png in Resources */,
 				AFB28AEA166C7423000AAC91 /* MainStoryboard.storyboard in Resources */,
+				AF837CA4167F1361002B5374 /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +209,7 @@
 				AFB28AF5166C8342000AAC91 /* practiceHomePageController.m in Sources */,
 				AFB28AFC166C86C9000AAC91 /* practiceLocationController.m in Sources */,
 				AFB28B03166C8E5A000AAC91 /* practiceCheckInFormController.m in Sources */,
+				AF837D19167F7AA6002B5374 /* practiceCreateAccountController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +325,7 @@
 				AFB28AF2166C7423000AAC91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

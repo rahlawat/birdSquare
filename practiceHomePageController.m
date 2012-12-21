@@ -16,6 +16,8 @@
 
 @implementation practiceHomePageController
 @synthesize user;
+@synthesize imgUser;
+@synthesize imagePath;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,9 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//     NSString *welcomeNote = @"Hi";
-//     practiceAppDelegate *appDelegate = (practiceAppDelegate *)[[UIApplication sharedApplication] delegate];
-//    self.lblWelcome.text = [welcomeNote stringByAppendingString:appDelegate.uname];
+     NSString *welcomeNote = @"Hi";
+    // practiceAppDelegate *appDelegate = (practiceAppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.lblWelcome.text = [welcomeNote stringByAppendingString:self.user];
+    [imgUser setImage:[UIImage imageNamed:imagePath]];
     // Do any additional setup after loading the view.
 }
 
@@ -39,13 +42,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)setUserName: (NSString*)userName
-{
-    NSString *welcomeNote = @"Hi";
-    self.lblWelcome.text = [welcomeNote stringByAppendingString:userName];
-
 }
 
 -(void)viewWillAppear:(BOOL)animated
