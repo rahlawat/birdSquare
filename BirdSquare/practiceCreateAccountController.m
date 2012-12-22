@@ -8,6 +8,7 @@
 
 #import "practiceCreateAccountController.h"
 #import <sqlite3.h>
+#import "DatabaseHandler.h"
 
 @interface practiceCreateAccountController ()
 
@@ -38,10 +39,22 @@
 }
 
 - (IBAction)createAccount:(id)sender {
-   NSString *msg = [self checkIfUserExists];
+    NSString *msg = [[DatabaseHandler instance] checkIfUserExists:self.txtUsername.text];
     if([msg isEqualToString:@""])
     {
-    [self saveUser];
+    if([self.txtPassword.text isEqualToString:self.txtConfirmPassword.text])
+    {
+       msg = [[DatabaseHandler instance] saveUser:self.txtUsername.text withPassword:self.txtPassword.text];
+        if([msg isEqualToString:@"Success"])
+        {
+                [self performSegueWithIdentifier:@"loginAfterCreateAccount" sender:self];
+        }
+    }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid" message:@"Passwords do not match." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
     }
     else
     {
@@ -50,63 +63,4 @@
     }
    }
 
--(void)saveUser
-{
-    sqlite3_stmt    *statement;
-    const char *dbpath = [databasePath UTF8String];
-    if ((sqlite3_open(dbpath, &_contactDB) == SQLITE_OK) && ([self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]))
-    {
-        
-        NSString *insertSQL = [NSString stringWithFormat:
-                               @"INSERT INTO CONTACTS (name, password) VALUES (\"%@\", \"%@\")",
-                               self.txtUsername.text, self.txtPassword.text];
-        
-        const char *insert_stmt = [insertSQL UTF8String];
-        sqlite3_prepare_v2(_contactDB, insert_stmt,
-                           -1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE)
-        {
-            [self performSegueWithIdentifier:@"loginAfterCreateAccount" sender:self];
-            
-        }
-    }else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid" message:@"Passwords do not match." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alert show];
-        }
-        sqlite3_finalize(statement);
-        sqlite3_close(_contactDB);
-    }
-
--(NSString *)checkIfUserExists
-{
-    const char *dbpath = [databasePath UTF8String];
-    sqlite3_stmt    *statement;
-    NSString *message = @"";
-    
-    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
-    {
-        NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT name, password FROM contacts WHERE name=\"%@\"",
-                              self.txtUsername.text];
-        
-        const char *query_stmt = [querySQL UTF8String];
-        
-        if (sqlite3_prepare_v2(_contactDB,
-                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
-        {
-            if (sqlite3_step(statement) == SQLITE_ROW)
-            {
-              message = [message stringByAppendingString:@"User already exists"];
-            }
-            else
-            {
-               
-            }
-            sqlite3_finalize(statement);
-        }
-        sqlite3_close(_contactDB);
-    }
-
-    return message;
-}
 @end

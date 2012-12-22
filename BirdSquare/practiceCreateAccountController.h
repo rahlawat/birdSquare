@@ -17,6 +17,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtUsername;
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *contactDB;
--(void)saveUser;
--(NSString *)checkIfUserExists;
 @end

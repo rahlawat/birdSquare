@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF63A84016856BD6004A14CF /* DatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AF63A83F16856BD6004A14CF /* DatabaseHandler.m */; };
 		AF837CA4167F1361002B5374 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF837CA3167F1361002B5374 /* background.jpg */; };
 		AF837D16167F7381002B5374 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF837D15167F7381002B5374 /* libsqlite3.dylib */; };
 		AF837D19167F7AA6002B5374 /* practiceCreateAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF837D18167F7AA6002B5374 /* practiceCreateAccountController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF63A83E16856BD6004A14CF /* DatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHandler.h; sourceTree = "<group>"; };
+		AF63A83F16856BD6004A14CF /* DatabaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHandler.m; sourceTree = "<group>"; };
 		AF837CA3167F1361002B5374 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../Pictures/background.jpg; sourceTree = "<group>"; };
 		AF837D15167F7381002B5374 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		AF837D17167F7AA6002B5374 /* practiceCreateAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = practiceCreateAccountController.h; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				AFB28B01166C8E5A000AAC91 /* practiceCheckInFormController.h */,
 				AFB28B02166C8E5A000AAC91 /* practiceCheckInFormController.m */,
 				AFB28AD7166C7422000AAC91 /* Supporting Files */,
+				AF63A83E16856BD6004A14CF /* DatabaseHandler.h */,
+				AF63A83F16856BD6004A14CF /* DatabaseHandler.m */,
 			);
 			path = BirdSquare;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				AFB28AFC166C86C9000AAC91 /* practiceLocationController.m in Sources */,
 				AFB28B03166C8E5A000AAC91 /* practiceCheckInFormController.m in Sources */,
 				AF837D19167F7AA6002B5374 /* practiceCreateAccountController.m in Sources */,
+				AF63A84016856BD6004A14CF /* DatabaseHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

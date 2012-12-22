@@ -20,7 +20,6 @@
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *contactDB;
 @property (weak, nonatomic) IBOutlet UILabel *status;
-- (NSString *) findContact;
 - (IBAction)createAccount:(id)sender;
 
 - (IBAction)btnSignIn:(id)sender;

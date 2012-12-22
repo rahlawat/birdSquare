@@ -11,6 +11,7 @@
 #import "practiceAppDelegate.h"
 #import <sqlite3.h>
 #import "practiceCreateAccountController.h"
+#import "DatabaseHandler.h"
 
 @interface practiceViewController ()
 
@@ -23,41 +24,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSString *docsDir;
-    NSArray *dirPaths;
-    
-    // Get the documents directory
-    dirPaths = NSSearchPathForDirectoriesInDomains(
-                                                   NSDocumentDirectory, NSUserDomainMask, YES);
-    
-    docsDir = dirPaths[0];
-    
-    // Build the path to the database file
-    _databasePath = [[NSString alloc]
-                     initWithString: [docsDir stringByAppendingPathComponent:
-                                      @"contacts.db"]];
-    
-    NSFileManager *filemgr = [NSFileManager defaultManager];
-    
-    if ([filemgr fileExistsAtPath: _databasePath ] == NO)
-    {
-        const char *dbpath = [_databasePath UTF8String];
-        
-        if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
-        {
-            char *errMsg;
-            const char *sql_stmt =
-            "CREATE TABLE IF NOT EXISTS CONTACTS (NAME TEXT, PASSWORD TEXT)";
-            
-            if (sqlite3_exec(_contactDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
-            {
-                _status.text = @"Failed to create table";
-            }
-            sqlite3_close(_contactDB);
-        } else {
-            _status.text = @"Failed to open/create database";
-        }
-    }}
+    [[DatabaseHandler instance] createDatabaseIfDoesNotExists];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -66,7 +34,7 @@
 }
 
 - (IBAction)btnSignIn:(id)sender {
-    NSString *savedUserPassowrd = [self findContact];
+    NSString *savedUserPassowrd = [[DatabaseHandler instance] findContact:self.txtUsername.text];
     if(([savedUserPassowrd isEqualToString:self.txtPassword.text]) && (![self.txtPassword.text isEqualToString:@""])){
         [self performSegueWithIdentifier:@"navigate" sender:self];
     } else {
@@ -91,40 +59,6 @@
         createAccountController.contactDB = self.contactDB;
     }
 
-}
-
-- (NSString *) findContact
-{
-    const char *dbpath = [_databasePath UTF8String];
-    sqlite3_stmt    *statement;
-    NSString *passwordField;
-    
-    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
-    {
-        NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT name, password FROM contacts WHERE name=\"%@\"",
-                              self.txtUsername.text];
-        
-        const char *query_stmt = [querySQL UTF8String];
-        
-        if (sqlite3_prepare_v2(_contactDB,
-                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
-        {
-            if (sqlite3_step(statement) == SQLITE_ROW)
-            {
-                passwordField = [[NSString alloc]
-                                        initWithUTF8String:(const char *)
-                                        sqlite3_column_text(statement, 1)];
-            }
-            else
-            {
-               passwordField = @"";
-            }
-            sqlite3_finalize(statement);
-        }
-        sqlite3_close(_contactDB);
-    }
-return passwordField;
 }
 
 - (IBAction)createAccount:(id)sender {
