@@ -31,7 +31,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="op8-hu-sa0">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRA-gY-Hy8">
                                 <constraints>
@@ -353,11 +353,11 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="so7-Il-FKX">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYA-AE-CpJ">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C75-Um-fZJ">
                                 <constraints>
@@ -422,6 +422,44 @@
             <point key="canvasLocation" x="351" y="844"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="practiceCheckInFormController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/practiceCheckInFormController.h"/>
+        </class>
+        <class className="practiceCreateAccountController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/practiceCreateAccountController.h"/>
+            <relationships>
+                <relationship kind="action" name="createAccount:"/>
+                <relationship kind="outlet" name="txtConfirmPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUsername" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="practiceHomePageController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/practiceHomePageController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imgUser" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblWelcome" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tblBirdsCheckedIn" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="practiceLocationController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/practiceLocationController.h"/>
+        </class>
+        <class className="practiceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/practiceViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSignIn:"/>
+                <relationship kind="action" name="createAccount:"/>
+                <relationship kind="outlet" name="status" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtPassword" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUsername" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

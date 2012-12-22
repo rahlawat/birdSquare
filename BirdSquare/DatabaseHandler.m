@@ -97,7 +97,7 @@ static DatabaseHandler *_instance = nil;
 -(NSString *)saveUser:(NSString *)userName withPassword:(NSString *)password
 {
     sqlite3_stmt    *statement;
-    NSString *message;
+    NSString *message = @"";
     const char *dbpath = [_databasePath UTF8String];
     if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
     {
